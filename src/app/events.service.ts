@@ -12,4 +12,9 @@ export class EventsService {
   getAllEvents() : any {
     return this.apiRequest.get('events');
   }
+
+  AddEvent(event: any) : any {
+    return this.apiRequest.post('events', event);
+  }
+  
 }

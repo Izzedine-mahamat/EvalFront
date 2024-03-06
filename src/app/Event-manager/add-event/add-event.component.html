@@ -1,0 +1,36 @@
+<div class="event-form-container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="eventForm">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Ajouter un nouvel événement</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Titre</mat-label>
+            <input matInput formControlName="title">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Date de l'événement</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateEvent">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Lieu</mat-label>
+            <input matInput formControlName="location">
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!eventForm.valid">Ajouter</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+  

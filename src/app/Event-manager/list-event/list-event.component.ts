@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { EventsService } from 'src/app/events.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ListEventComponent {
   displayedColumns: string[] = ['Title', 'Description', 'DateEvent', 'Location'];
   dataSource = new MatTableDataSource<any>();
 
-  constructor(private events: EventsService) {}
+  constructor(private events: EventsService, private router: Router) {}
 
   ngOnInit() {
     this.events.getAllEvents().subscribe((events: any[]) => {
@@ -27,9 +28,10 @@ export class ListEventComponent {
     console.log("Delete Event");
   }
 
-  addEvent(){
-    console.log("Add Event");
+  addEvent() {
+    this.router.navigate(['/Addevents']);
   }
+  
 
  
 }
