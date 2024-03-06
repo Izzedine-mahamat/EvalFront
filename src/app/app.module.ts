@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UpdateEventComponent } from './Event-manager/update-event/update-event.component';
+import { ConfirmDialogComponent } from './Event-manager/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { UpdateEventComponent } from './Event-manager/update-event/update-event.
     AppComponent,
     ListEventComponent,
     AddEventComponent,
-    UpdateEventComponent
+    UpdateEventComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,52 @@
+::ng-deep {
+    .mat-dialog-container {
+      border-radius: 8px;
+      padding: 24px;
+    }
+  
+    h2.mat-dialog-title {
+      color: #1976d2; 
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  
+    mat-dialog-content {
+      padding: 0 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px; 
+    }
+  
+    mat-form-field {
+      width: 100%; 
+      .mat-label {
+        color: #1976d2; 
+      }
+  
+      input, textarea {
+        font-size: 16px; 
+      }
+    }
+  
+    mat-dialog-actions {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+  
+      button {
+        border-radius: 20px; 
+        font-weight: bold;
+  
+        &[color="primary"] {
+          background-color: #1976d2; 
+          color: white;
+  
+          &:disabled {
+            background-color: #ccc; 
+          }
+        }
+      }
+    }
+  }
+  

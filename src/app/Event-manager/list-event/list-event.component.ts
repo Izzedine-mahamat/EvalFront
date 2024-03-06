@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { EventsService } from 'src/app/events.service';
 import { UpdateEventComponent } from '../update-event/update-event.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-list-event',
@@ -36,18 +37,24 @@ export class ListEventComponent {
   }
 
   deleteEvent(eventId: string) {
-    const confirmation = confirm("Êtes-vous sûr de vouloir supprimer cet événement ?");
-    if (confirmation) {
-      this.events.deleteEvent(eventId).subscribe({
-        next: () => {
-          console.log('Événement supprimé avec succès');
-        },
-        error: (error) => {
-          console.error('Erreur lors de la suppression de l\'événement', error);
-        }
-      });
-    }
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '300px',
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.events.deleteEvent(eventId).subscribe({
+          next: () => {
+            console.log('Événement supprimé avec succès');
+          },
+          error: (error) => {
+            console.error('Erreur lors de la suppression de l\'événement', error);
+          }
+        });
+      }
+    });
   }
+  
   
 
   addEvent() {

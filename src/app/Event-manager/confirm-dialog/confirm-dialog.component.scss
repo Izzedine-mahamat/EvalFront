@@ -1,0 +1,42 @@
+::ng-deep {
+    .mat-dialog-container {
+      border-radius: 8px; // Bords arrondis pour le dialogue
+      padding: 20px; // Espace autour du contenu du dialogue
+    }
+  
+    h2.mat-dialog-title {
+      color: #d32f2f; // Couleur pour attirer l'attention sur l'importance de l'action
+      margin-bottom: 15px; // Espace entre le titre et le contenu
+    }
+  
+    mat-dialog-content {
+      padding-bottom: 20px; 
+      color: rgba(0, 0, 0, 0.7); 
+      font-size: 16px; 
+    }
+  
+    mat-dialog-actions {
+      display: flex;
+      justify-content: flex-end; 
+      gap: 10px; 
+  
+      button {
+        border-radius: 4px; 
+        font-weight: 500;
+  
+        &.mat-button {
+          min-width: 90px; 
+        }
+  
+        &[color="warn"] {
+          color: #d32f2f; 
+          border: 1px solid #d32f2f; 
+  
+          &:hover {
+            background-color: rgba(211, 47, 47, 0.1); 
+          }
+        }
+      }
+    }
+  }
+  
