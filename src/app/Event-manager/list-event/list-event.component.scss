@@ -1,0 +1,54 @@
+.events-page-container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 100vh;
+    
+  
+    .actions-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      
+  
+      .search-field {
+        width: 100%;
+        max-width: 300px;
+        
+        mat-icon {
+          color: white; 
+        }
+      
+        
+    }
+      
+    
+  
+      .add-button {
+        margin-left: 20px;
+      }
+      
+    }
+  
+    .table-container {
+      overflow: auto;
+      .events-table {
+        width: 100%;
+  
+        th.mat-header-cell {
+          color: #6a1b9a; 
+        }
+  
+        td.mat-cell {
+          color: #333; 
+        }
+  
+        button mat-icon {
+          color: #6a1b9a; 
+        }
+      }
+    }
+  }
+  
