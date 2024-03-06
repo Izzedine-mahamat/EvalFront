@@ -14,4 +14,19 @@ export class ApiRequestService {
     const url = `${environment.apiUrl}/${endpoint}`;
     return this.http.post<T>(url, body, { params });
   }
+
+  get<T>(endpoint: string, params?: HttpParams): Observable<T> {
+    const url = `${environment.apiUrl}/${endpoint}`;
+    return this.http.get<T>(url, { params });
+  }
+
+  put<T>(endpoint: string, body: Object, params?: HttpParams): Observable<T> {
+    const url = `${environment.apiUrl}/${endpoint}`;
+    return this.http.put<T>(url, body, { params });
+  }
+
+  delete<T>(endpoint: string, params?: HttpParams): Observable<T> {
+    const url = `${environment.apiUrl}/${endpoint}`;
+    return this.http.delete<T>(url, { params });
+  }
 }
