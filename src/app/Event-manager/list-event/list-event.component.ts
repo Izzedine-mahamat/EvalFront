@@ -35,9 +35,20 @@ export class ListEventComponent {
     });
   }
 
-  deleteEvent(){
-    console.log("Delete Event");
+  deleteEvent(eventId: string) {
+    const confirmation = confirm("Êtes-vous sûr de vouloir supprimer cet événement ?");
+    if (confirmation) {
+      this.events.deleteEvent(eventId).subscribe({
+        next: () => {
+          console.log('Événement supprimé avec succès');
+        },
+        error: (error) => {
+          console.error('Erreur lors de la suppression de l\'événement', error);
+        }
+      });
+    }
   }
+  
 
   addEvent() {
     this.router.navigate(['/Addevents']);

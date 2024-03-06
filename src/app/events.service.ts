@@ -21,4 +21,8 @@ export class EventsService {
   updateEvent(event: any, id: string): Observable<any> {
     return this.apiRequest.put(`events/${id}`, event);
   }
+
+  deleteEvent(id: string): Observable<any> {
+    return this.apiRequest.delete(`events/${id}`);
+  }
 }
